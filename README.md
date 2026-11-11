@@ -6,7 +6,7 @@ Bosanski function-calling / agentic model za AI agente i pozivanje alata. Prvi p
 
 | Verzija | HF link | Format |
 |---|---|---|
-| Non-Thinking v0.1 (full bf16) | [shaban2024/Qwen3.5-2B-BOS-Non-Thinking](https://huggingface.co/shaban2024/Qwen3.5-2B-BOS-Non-Thinking) | safetensors BF16 |
+| Non-Thinking v0.1 (full bf16) | [BH-Language-AI/Qwen3.5-2B-BOS-Non-Thinking](https://huggingface.co/BH-Language-AI/Qwen3.5-2B-BOS-Non-Thinking) | safetensors BF16 |
 | Q8 kvantizacija | [shaban2024/Qwen3.5-2B-BOS-Q8-NonThinking](https://huggingface.co/shaban2024/Qwen3.5-2B-BOS-Q8-NonThinking) | Q8 (blagi pad argumenata 1.0→0.8) |
 
 - **Baza:** `alphaedge-ai/Qwen3.5-2B-bos-32768` (Apache-2.0; važe i Qwen uslovi za arhitekturu)
@@ -34,9 +34,9 @@ No-tool ponašanje nesavršeno — terminal je fallback, Policy Engine obavezan.
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
-tok = AutoTokenizer.from_pretrained("shaban2024/Qwen3.5-2B-BOS-Non-Thinking", trust_remote_code=True)
+tok = AutoTokenizer.from_pretrained("BH-Language-AI/Qwen3.5-2B-BOS-Non-Thinking", trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(
-    "shaban2024/Qwen3.5-2B-BOS-Non-Thinking", torch_dtype="auto",
+    "BH-Language-AI/Qwen3.5-2B-BOS-Non-Thinking", torch_dtype="auto",
     device_map="auto", trust_remote_code=True)
 ```
 
